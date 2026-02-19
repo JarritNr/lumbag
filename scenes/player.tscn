@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://fon80amvddeo"]
+[gd_scene load_steps=11 format=3 uid="uid://fon80amvddeo"]
 
 [ext_resource type="Texture2D" uid="uid://do4o2gwf3l0u" path="res://assets/Player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bym8ptmyi3r64" path="res://scripts/Player.cs" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -56,12 +57,13 @@ animations = [{
 radius = 3.0
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_smehm")
 autoplay = "default"
-frame_progress = 0.424581
+frame_progress = 0.210767
 
 [node name="collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
