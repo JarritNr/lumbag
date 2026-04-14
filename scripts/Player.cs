@@ -21,7 +21,7 @@ public partial class Player : CharacterBody2D
         {
             if(Mathf.Abs(direction.X) > 0)
             {
-                _playerSprite.FlipH = direction.X > 0;
+                _playerSprite.FlipH = direction.X < 0;
                 _playerSprite.Play("walk_s");
             }
             else if(direction.Y < 0) _playerSprite.Play("walk_u");

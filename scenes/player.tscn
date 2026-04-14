@@ -291,9 +291,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ur7pv"]
 radius = 3.0
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite")]
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_playerSprite")]
 script = ExtResource("1_g2els")
-player_sprite = NodePath("player_sprite")
+_playerSprite = NodePath("player_sprite")
 
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
