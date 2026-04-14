@@ -292,6 +292,7 @@ animations = [{
 radius = 3.0
 
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_playerSprite")]
+y_sort_enabled = true
 script = ExtResource("1_g2els")
 _playerSprite = NodePath("player_sprite")
 
