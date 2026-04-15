@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://psuqw764sb64"]
+
+[ext_resource type="Script" uid="uid://1d2qdnnj1olb" path="res://scripts/InventoryUi.cs" id="1_ylkvr"]
+[ext_resource type="PackedScene" uid="uid://dpb0aaexm2r5p" path="res://scenes/inventory_slot.tscn" id="2_mdwe3"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 34.0
+offset_bottom = 34.0
+script = ExtResource("1_ylkvr")
+slotTemplate = ExtResource("2_mdwe3")
+
+[node name="SlotGrid" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 34.0
+offset_bottom = 34.0
+columns = 10
+
+[node name="InventorySlotUI" parent="SlotGrid" instance=ExtResource("2_mdwe3")]
+layout_mode = 2

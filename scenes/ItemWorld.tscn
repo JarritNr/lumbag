@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ity12xnktp26"]
+
+[ext_resource type="Script" uid="uid://ce5cpmjyb064v" path="res://scripts/ItemWorld.cs" id="1_d45ue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d45ue"]
+radius = 6.0
+
+[node name="ItemWorld" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_d45ue")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d45ue")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c0cc6u3berd4t"]
+
+[ext_resource type="Script" uid="uid://bo3u1oys037m" path="res://scripts/ItemData.cs" id="1_nmid8"]
+[ext_resource type="Texture2D" uid="uid://l2vp3dsqqtwk" path="res://assets/items/wood.png" id="1_w3n26"]
+
+[resource]
+script = ExtResource("1_nmid8")
+Name = "wood"
+Icon = ExtResource("1_w3n26")
+IsStackable = false
+metadata/_custom_type_script = "uid://bo3u1oys037m"

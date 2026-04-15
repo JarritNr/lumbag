@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://44nwphu4grms"]
+[gd_scene load_steps=19 format=3 uid="uid://44nwphu4grms"]
 
 [ext_resource type="Texture2D" uid="uid://cfkpnedqr5f3b" path="res://assets/environment/Beach_Tile.png" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://fon80amvddeo" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://i062fpt1gnls" path="res://assets/environment/Water_Middle.png" id="5_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://m8rdg4er04j" path="res://assets/environment/Water_Tile.png" id="6_dinhu"]
 [ext_resource type="PackedScene" uid="uid://hxww4owqmhpi" path="res://scenes/stone.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://ity12xnktp26" path="res://scenes/ItemWorld.tscn" id="9_vtaks"]
+[ext_resource type="Resource" uid="uid://c0cc6u3berd4t" path="res://resources/items/wood.tres" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://psuqw764sb64" path="res://scenes/inventory_ui.tscn" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvuet"]
 texture = ExtResource("1_u5sy4")
@@ -104,7 +107,8 @@ texture = ExtResource("6_dinhu")
 2:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_264po"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_kvuet")
 sources/1 = SubResource("TileSetAtlasSource_trtic")
 sources/2 = SubResource("TileSetAtlasSource_ir15t")
@@ -138,3 +142,74 @@ position = Vector2(78, -51)
 
 [node name="Stone3" parent="." instance=ExtResource("8_gee14")]
 position = Vector2(-43, 46)
+
+[node name="collectable Items" type="Node" parent="."]
+
+[node name="Holz" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(66, 16)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz2" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(111, 23)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz3" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz4" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-46, 89)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz5" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-96, 56)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz6" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-105, 28)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz7" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-102, 3)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz8" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-96, -18)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz9" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-80, -49)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz10" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(-30, -74)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz11" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(16, -76)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="Holz12" parent="collectable Items" instance=ExtResource("9_vtaks")]
+position = Vector2(41, -57)
+scale = Vector2(0.5, 0.5)
+data = ExtResource("10_kvpfn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("11_kvpfn")]
+offset_left = 101.0
+offset_top = 534.0
+offset_right = 137.3
+offset_bottom = 570.0
+scale = Vector2(2.5, 2.5)

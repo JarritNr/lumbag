@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpb0aaexm2r5p"]
+
+[ext_resource type="Script" uid="uid://76yqv72ou7ma" path="res://scripts/InventorySlotUi.cs" id="1_dxvxp"]
+[ext_resource type="Texture2D" uid="uid://cjuuwls0d2mnc" path="res://assets/inventory_slot.png" id="2_bxqf6"]
+[ext_resource type="Texture2D" uid="uid://l2vp3dsqqtwk" path="res://assets/items/wood.png" id="3_hddt5"]
+
+[node name="InventorySlotUI" type="PanelContainer"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(34, 34)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dxvxp")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+texture = ExtResource("2_bxqf6")
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_hddt5")
+stretch_mode = 3
