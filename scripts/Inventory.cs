@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public partial class Inventory : Node
 {
-    [Export] public int SlotCount = 10;
+    [Export] public int SlotCount = 8; //anzahl der Inventarslots, die der spieler hat.
     private ItemData[] _slots;
     [Signal] public delegate void InventoryChangedEventHandler();
 
