@@ -119,25 +119,30 @@ sources/5 = SubResource("TileSetAtlasSource_ssvqc")
 [node name="game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Y-sorted" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Stone" parent="Y-sorted" instance=ExtResource("8_gee14")]
+y_sort_enabled = true
+position = Vector2(-122, -26)
+
+[node name="Stone2" parent="Y-sorted" instance=ExtResource("8_gee14")]
+y_sort_enabled = true
+position = Vector2(78, -51)
+
+[node name="Stone3" parent="Y-sorted" instance=ExtResource("8_gee14")]
+position = Vector2(-43, 46)
+
+[node name="player" parent="Y-sorted" instance=ExtResource("1_uwrxv")]
 position = Vector2(-1, -1)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="Y-sorted/player"]
 position = Vector2(1, 1)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="environment" type="Node" parent="."]
-
-[node name="Stone" parent="environment" instance=ExtResource("8_gee14")]
-position = Vector2(-122, -26)
-
-[node name="Stone2" parent="environment" instance=ExtResource("8_gee14")]
-position = Vector2(78, -51)
-
-[node name="Stone3" parent="environment" instance=ExtResource("8_gee14")]
-position = Vector2(-43, 46)
 
 [node name="TileMap" type="TileMap" parent="environment"]
 z_index = -1
@@ -215,4 +220,4 @@ offset_top = 534.0
 offset_right = 137.3
 offset_bottom = 570.0
 scale = Vector2(2.5, 2.5)
-player = NodePath("../../player")
+player = NodePath("../../Y-sorted/player")
