@@ -1,5 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://bqm45mn6pwtm4"]
+[gd_scene load_steps=42 format=3 uid="uid://bqm45mn6pwtm4"]
 
+[ext_resource type="Script" uid="uid://dfg14kcyttm5f" path="res://scripts/trader_npc.cs" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://cr7o7yjyp54ev" path="res://assets/snört.png" id="1_ideak"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxcha"]
@@ -290,10 +291,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv78h"]
+radius = 89.0225
+
 [node name="NPC" type="Node2D"]
+script = ExtResource("1_abqhh")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_4y1uw")
-animation = &"idle_d"
+animation = &"idle_s"
 autoplay = "idle_d"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rv78h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

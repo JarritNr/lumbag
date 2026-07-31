@@ -143,8 +143,9 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Node2D" parent="Y-sorted" instance=ExtResource("3_dinhu")]
-position = Vector2(54, 0)
+[node name="Snoert" parent="Y-sorted" instance=ExtResource("3_dinhu")]
+position = Vector2(137, 3)
+margin = 20
 
 [node name="environment" type="Node" parent="."]
 
