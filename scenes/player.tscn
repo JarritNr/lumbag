@@ -303,7 +303,7 @@ _playerSprite = NodePath("player_sprite")
 [node name="player_sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"idle_d"
+animation = &"walk_d"
 autoplay = "idle_d"
 
 [node name="collider" type="CollisionShape2D" parent="."]
