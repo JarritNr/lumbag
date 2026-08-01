@@ -26,6 +26,7 @@ public partial class FollowComponent : Node
 	}
 
 	public void _on_area_2d_body_entered(Node2D body){
+        if (!IsProcessing() && !IsPhysicsProcessing()) return;
         if (body is Player player){
             _playerRef = player;
             _playerNearby = true;
@@ -35,6 +36,7 @@ public partial class FollowComponent : Node
     }
 
     public void _on_area_2d_body_exited(Node2D body){
+        if (!IsProcessing() && !IsPhysicsProcessing()) return;
         if (body == _playerRef){
             _playerRef = null;
             _playerNearby = false;

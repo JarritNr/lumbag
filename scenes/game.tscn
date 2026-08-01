@@ -145,6 +145,7 @@ position_smoothing_speed = 8.0
 
 [node name="Snoert" parent="Y-sorted" instance=ExtResource("3_dinhu")]
 position = Vector2(137, 3)
+CurrentMode = 0
 
 [node name="environment" type="Node" parent="."]
 
