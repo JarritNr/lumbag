@@ -1,8 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://bqm45mn6pwtm4"]
+[gd_scene load_steps=44 format=3 uid="uid://bqm45mn6pwtm4"]
 
 [ext_resource type="Script" uid="uid://dfg14kcyttm5f" path="res://scripts/Npc.cs" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://cr7o7yjyp54ev" path="res://assets/snört.png" id="1_ideak"]
-[ext_resource type="Script" uid="uid://uv73b31iun1o" path="res://scripts/IdleComponent.cs" id="3_4wlns"]
 [ext_resource type="Script" uid="uid://cine13qxr5gen" path="res://scripts/PatrolComponent.cs" id="4_tl2vt"]
 [ext_resource type="Script" uid="uid://cv7var8lwmuq8" path="res://scripts/FollowComponent.cs" id="5_hwkja"]
 
@@ -299,16 +298,12 @@ radius = 89.0225
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_abqhh")
-CurrentMode = 2
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_4y1uw")
 animation = &"walk_d"
 autoplay = "idle_d"
-
-[node name="IdleComponent" type="Node" parent="."]
-script = ExtResource("3_4wlns")
 
 [node name="PatrolComponent" type="Node" parent="."]
 script = ExtResource("4_tl2vt")
@@ -321,7 +316,5 @@ script = ExtResource("5_hwkja")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_rv78h")
 
-[connection signal="body_entered" from="Area2D" to="IdleComponent" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="FollowComponent" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="IdleComponent" method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="Area2D" to="FollowComponent" method="_on_area_2d_body_exited"]
