@@ -29,7 +29,8 @@ public partial class FollowComponent : Node
         if (body is Player player){
             _playerRef = player;
             _playerNearby = true;
-            UpdateFacingDirection("idle");
+            _currentAnimationState = moveToPlayer ? "walk" : "idle";
+            UpdateFacingDirection(_currentAnimationState);
         }
     }
 
