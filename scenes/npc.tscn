@@ -303,14 +303,18 @@ CurrentMode = 1
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_4y1uw")
-animation = &"walk_d"
+animation = &"idle_d"
 autoplay = "idle_d"
 
 [node name="PatrolComponent" type="Node" parent="."]
 script = ExtResource("4_tl2vt")
+moveSpeed = 100.0
 
 [node name="FollowComponent" type="Node" parent="."]
 script = ExtResource("5_hwkja")
+moveSpeed = 100.0
+startAnimation = "idle_s"
+flippedAtStart = true
 
 [node name="Area2D" type="Area2D" parent="."]
 

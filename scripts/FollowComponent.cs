@@ -6,11 +6,13 @@ using System;
 
 public partial class FollowComponent : Node
 {
-    [Export] private float moveSpeed = 100.0f;
+    [Export] private float moveSpeed;
     [Export] private float stopDistance = 40.0f;
     [Export] private bool moveToPlayer = true;
     [Export] private int margin = 15;
     [Export] private double updateInterval = 0.20;
+    [Export] private String startAnimation = "idle_d";
+    [Export] private bool flippedAtStart = false;
 
     private Npc _parent;
     private AnimatedSprite2D npcSprite;
@@ -23,6 +25,8 @@ public partial class FollowComponent : Node
 	public override void _Ready(){
         _parent = GetParent<Npc>();
         npcSprite = _parent.GetNode<AnimatedSprite2D>("sprite");
+        npcSprite.Play(startAnimation);
+        npcSprite.FlipH = flippedAtStart;
 	}
 
 	public void _on_area_2d_body_entered(Node2D body){
